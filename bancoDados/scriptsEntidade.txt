@@ -42,3 +42,20 @@ CREATE TABLE IF NOT EXISTS `formacaoFuncionario` (
     `coren` varchar(10) NOT NULL,
     PRIMARY KEY (`id`)
 );
+
+CREATE TABLE IF NOT EXISTS `idoso` (
+    `id` int(9) AUT INCREMENT NOT NULL,  
+    `dataNasc` datetime NOT NULL,  
+    `cpf` varchar(11) NOT NULL,  
+    `nome` varchar(45) NOT NULL,  
+    PRIMARY KEY ('id'),
+    FOREIGN KEY (`responsavelId`) REFERENCES ('responsavel')
+);
+
+CREATE TABLE IF NOT EXISTS `prontuario` (
+    `id` int(9) AUT INCREMENT NOT NULL,
+    `descricao` varchar(150) NOT NULL,
+    PRIMARY KEY ('id'),
+    FOREIGN KEY (`idosoId`) REFERENCES ('idoso'),
+    FOREIGN KEY (`agendaId`) REFERENCES ('agenda')
+); 
