@@ -24,8 +24,9 @@ CREATE TABLE IF NOT EXISTS `contato` (
 );
 
 CREATE TABLE IF NOT EXISTS `funcionario` (
-    `id` int(9) AUTO_INCREMENT,
+    `id` int(9) AUTO_INCREMENT NOT NULL,
     `nome` varchar(45) NOT NULL,
+    `cpf` varchar(11) NOT NULL,
     `email` varchar(45) NOT NULL,
     `dataNasc` datetime NOT NULL,
     PRIMARY KEY (`id`),
@@ -33,4 +34,11 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
     FOREIGN KEY (`asiloId`) REFERENCES (`asilo`),
     FOREIGN KEY (`enderecoId`) REFERENCES (`endereco`),
     FOREIGN KEY (`formacaoId`) REFERENCES (`formacaoFuncionario`)
+);
+
+CREATE TABLE IF NOT EXISTS `formacaoFuncionario` (
+    `id` int(9) AUTO_INCREMENT NOT NULL,
+    `tipoFormacao` varchar(50) NOT NULL,
+    `coren` varchar(10) NOT NULL,
+    PRIMARY KEY (`id`)
 );
