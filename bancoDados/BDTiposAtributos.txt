@@ -38,6 +38,7 @@ Endereco
 Funcionario
 	id (numero, auto, 9)
 	nome (texto, 45)
+	cpf (varchar, 11)
 	email (texto, 45)
 	dataNasc (data)
 	contatoId (numero, 9)
@@ -71,6 +72,7 @@ Prontuario
 Responsavel
 	id (numero, auto, 9)
 	nome (texto, 45)
+	cpf (varchar, 11)
 	email (texto, 45)
 	contatoId (numero, 9)
 	dataNasc (data)
