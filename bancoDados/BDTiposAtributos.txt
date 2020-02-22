@@ -3,9 +3,9 @@ Entidades:
 - Asilo
 - Avaliacao
 - Endereco
-- Enfermeiro
+- Funcionario
 - Estado
-- Formacao
+- FormacaoFuncionario
 - Idoso
 - Prontuario
 - Responsavel
