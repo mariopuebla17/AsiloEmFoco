@@ -1,0 +1,82 @@
+Entidades:
+
+-Asilo
+-Avaliação
+-Endereço
+-Enfermeiro
+-Estado
+-Formação
+-Idoso
+-Prontuario
+-responsável
+
+Asilo
+	id (numero, auto, 9)
+	nome (texto, 50)
+	fone (texto, 10)
+	celular (texto, 11)
+	cnpj (texto, 14)
+	enderecoId (numero, 9)
+
+Avaliacao
+	id (numero, 9)
+	comentario (texto, 100)
+	nota (numero, 10)
+	asiloId (numero, 9)
+
+Endereco
+	id (numero, 9)
+	cidade (texto, 28)
+	logradouro (texto, 50)
+	numero (numero, 5)
+	cep (texto, 9)
+	bairro (texto, 50)
+	enfermeiroId (numero, 9)
+	responsavelId (numero, 9)
+	asiloId (numero, 9)
+	estadoId (numero, 9)
+
+Enfermeiro
+	id (numero, 9)
+	nome (texto, 45)
+	email (texto, 45)
+	dataNasc (data)
+	celular (texto, 11)
+	telefone (texto, 10)
+	registro ()
+	asiloId (numero, 9)
+	enderecoId (numero, 9)
+	formacaoId (numero, 9)
+
+Estado
+	id (numero, 9)
+	sigla (texto, 2)
+	nome (texto, 18)
+
+FormacaoEnfermeiro
+	id (numero, 9)
+	descricao (texto, 21)
+	coren(texto, 10)
+
+idoso
+	id (numero, 9)
+	dataNasc (data)
+	cpf (11)
+	nome (45)
+	responsavelId (numero, 9)
+
+prontuario
+	id (numero, 9)
+	descricao (texto, 150)
+	idosoId(numero, 9)
+
+responsavel
+	id (numero, 9)
+	nome (texto, 45)
+	email (texto, 45)
+	celular (texto, 11)
+	fone (texto, 10)
+	dataNasc (data)
+	idosoId (numero, 9)
+	enderecoId (numero, 9)
+
