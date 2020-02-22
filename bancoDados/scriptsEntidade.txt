@@ -7,7 +7,7 @@
     . Avaliacoes
     . Agenda
 - Mario
-    . Funcionario
+    . Funcionario OK
     . Contato OK
     . FormacaoFuncionario
 - Steicy
@@ -17,8 +17,20 @@
 ------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `contato` (
-  `id` int(9) AUTO_INCREMENT,
+  `id` int(9) AUTO_INCREMENT NOT NULL,
   `tipo` varchar(15) NOT NULL,
   `telefone` varchar(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+);
+
+CREATE TABLE IF NOT EXISTS `funcionario` (
+    `id` int(9) AUTO_INCREMENT,
+    `nome` varchar(45) NOT NULL,
+    `email` varchar(45) NOT NULL,
+    `dataNasc` datetime NOT NULL,
+    PRIMARY KEY (`id`),
+    FOREIGN KEY (`contatoId`) REFERENCES (`contato`),
+    FOREIGN KEY (`asiloId`) REFERENCES (`asilo`),
+    FOREIGN KEY (`enderecoId`) REFERENCES (`endereco`),
+    FOREIGN KEY (`formacaoId`) REFERENCES (`formacaoFuncionario`)
+);
