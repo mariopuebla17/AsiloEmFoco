@@ -7,8 +7,8 @@
     . Avaliacoes
     . Agenda
 - Mario
-    . Funcionario OK
-    . Contato OK
+    . Funcionario
+    . Contato
     . FormacaoFuncionario
 - Steicy
     . Idoso
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS `prontuario` (
 ); 
 
 CREATE TABLE IF NOT EXISTS `asilo` (
-    `id` int(9) AUTO_INCREMENT,
+    `id` int(9) AUTO_INCREMENT NOT NULL,
     `razaoSocial` varchar(50) NOT NULL,
     `contatoId` int(9) NOT NULL,
     `cnpj`varchar(14) NOT NULL,
@@ -69,8 +69,9 @@ CREATE TABLE IF NOT EXISTS `asilo` (
     PRIMARY KEY (`id`),
     FOREIGN KEY (`responsavelId`) REFERENCES (`responsavel`),
 );
+
 CREATE TABLE IF NOT EXISTS `avaliacao` (
-    `id` int(9) AUTO_INCREMENT,
+    `id` int(9) AUTO_INCREMENT NOT NULL,
     `comentario` varchar(200),
     `nota` int(1) NOT NULL,
     PRIMARY KEY (`id`),
@@ -78,7 +79,7 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
 );
 
 CREATE TABLE IF NOT EXISTS `agenda` (
-    `id` int(9) AUTO_INCREMENT,
+    `id` int(9) AUTO_INCREMENT NOT NULL,
     `data` date NOT NULL,
     `hora` time NOT NULL,
     PRIMARY KEY (`id`),
