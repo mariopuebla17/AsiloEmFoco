@@ -17,10 +17,10 @@
 ------------------------------------------------------
 
 CREATE TABLE IF NOT EXISTS `contato` (
-  `id` int(9) AUTO_INCREMENT NOT NULL,
-  `tipo` varchar(15) NOT NULL,
-  `telefone` varchar(11) NOT NULL,
-  PRIMARY KEY (`id`)
+    `id` int(9) AUTO_INCREMENT NOT NULL,
+    `tipo` varchar(15) NOT NULL,
+    `telefone` varchar(11) NOT NULL,
+    PRIMARY KEY (`id`)
 );
 
 CREATE TABLE IF NOT EXISTS `funcionario` (
@@ -93,10 +93,10 @@ CREATE TABLE IF NOT EXISTS `responsavel`(
     `email` VARCHAR (45) NOT NULL,
     `dataNasc` DATETIME NOT NULL.
     PRIMARY KEY (`id`),
-    FOREING KEY (`contatoId`) REFERENCES (`contato`),
-    FOREING KEY (`idosoId`) REFERENCES (`idoso`),
-    FOREING KEY (`enderecoId`) REFERENCES (`endereco`),
-    FOREING KEY (`asiloId`) REFERENCES (`asilo`)
+    FOREIGN KEY (`contatoId`) REFERENCES (`contato`),
+    FOREIGN KEY (`idosoId`) REFERENCES (`idoso`),
+    FOREIGN KEY (`enderecoId`) REFERENCES (`endereco`),
+    FOREIGN KEY (`asiloId`) REFERENCES (`asilo`)
 ):
 
 CREATE TABLE IF NOT EXISTS `estado`(
@@ -115,5 +115,5 @@ CREATE TABLE IF NOT EXISTS `endereco`(
     `bairro` VARCHAR (50) NOT NULL,
     `complemento` VARCHAR (50),
     PRIMARY KEY (`id`),
-    FOREING KEY (`estadoId`) REFERENCES (`estado`)
+    FOREIGN KEY (`estadoId`) REFERENCES (`estado`)
 ):
