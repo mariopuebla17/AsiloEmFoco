@@ -1,0 +1,292 @@
+  <!DOCTYPE html>
+  <html> <!-- Abre Html -->
+
+    <head> <!-- Abre cabeçalho -->
+
+      <meta charset="utf-8"/> <!-- Codificação do Arquivo -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Otimização Mobile -->
+
+      <title>Guia Rapido de CSS</title> <!-- Título da Página -->
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Google Font Icon -->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> <!-- Materialize CSS -->
+      <link type="text/css" rel="stylesheet" href="css/estilo.css"/>  <!-- O seu arquivo CSS -->
+
+    </head> <!-- Fecha cabeçalho -->   
+   
+    <body>  <!-- Inicia corpo da página -->
+
+    <!-- Inicia Topo - LOGO + MENU -->
+    <div class="navbar-fixed"> 
+      <nav class="bgtopo ">
+        <div class="nav-wrapper container">
+
+              <a href="index.html" class="brand-logo">MaterializeCSS</a> <!-- LOGOTIPO -->
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> <!-- Burguer Menu Responsivo --> 
+
+              <!-- INICIO MENU PC Desktop -->
+              <ul class="right hide-on-med-and-down"> 
+                <li><a href="Guia-rapido-de-html.html">HTML</a></li>
+                <li><a href="Guia-rapido-de-css.html">CSS</a></li>
+                <li><a href="materialize.html">Materialize</a></li>
+                <li><a href="sublime-text.html">Sublime Text</a></li>
+              </ul> 
+              <!-- FIM MENU PC Desktop -->
+        </div>
+      </nav>
+    </div>
+    <!-- FIM Topo - LOGO + MENU -->  
+
+    <!-- inicio menu-mobile -->
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="guia-rapido-de-html.html">HTML</a></li>
+      <li><a href="guia-rapido-de-css.html">CSS</a></li>
+      <li><a href="materialize.html">Materialize</a></li>
+      <li><a href="sublime-text.html">Sublime Text</a></li>
+    </ul>
+    <!-- fim menu-mobile -->
+
+  <!-- INICIO Imagem Parallax -->  
+  <div class="parallax-container cxaltura">
+    <div class="parallax"><img src="fotos/css.jpg"></div>
+  </div>
+  <!-- FIM Imagem Parallax -->  
+
+
+    <!-- inicio conteúdo -->
+    <div class="container">
+    	<div class="row">
+	    	<div class="col s12 flow-text textosobremim">
+	    		<h1 class="titulo-pagina">Guia rápido de CSS</h1>
+
+	    		   <p>O CSS, também conhecido como folha de Estilo, é utilizado para posicionar e estilizar os layouts, fontes, textos, imagens, divs, etc...</p>
+
+             <p>A forma de aplicação do CSS no código HTML é através de Classes e IDs.</p>
+
+             <p>As Classes são mais utilizadas porque elas podem ser repetidas inúmeras vezes em diversos objetos diferentes. As Classes são abertas no CSS iniciando com um ponto <b><font color=red>.</font></b> exemplo:</p>
+
+             <p><b><font color=red>.</font>nomedanovaclasse{ valores da classe aqui; }</b></p>
+
+             <br><p>As IDs podem ser utilizadas em um único objeto. As IDs são abertas no CSS iniciando com o jogo da velha <b><font color=red>#</font></b>, exemplo:</p>
+
+             <p><b><font color=red>#</font>nomedanovaID{ valores da ID aqui; }</b></p>
+
+             <br><p>O CSS normalmente é carregado no dentro do HEAD no cabeçalho do site.</p>
+
+             <p>O comando para carregar o arquivo CSS é este: </p>
+
+
+             <p><b><b><</b>link type="text/css" rel="stylesheet" href="<b>css/estilo.css</b>"/<b>></b></b> </p>
+
+             <p>Considerando que o seu arquivo CSS se chama <b>estilo.css</b> e está salvo dentro da pasta <b>CSS</b>. </p>
+
+             <br><p>O CSS também pode ser escrito no corpo do arquivo html, exemplo:</p><br>
+
+             <style>
+                .novoparagrafo{ 
+                  color: red;
+                  font-size: 50px;
+                  font-weight: bold;
+                  }
+
+                  .italico{
+                      font-style: italic;
+                  }
+                  #pazul{
+                    color: #000080 !important;
+                  }
+             </style>
+             <b>
+             <p>
+             <b> <</b>STYLE<b>></b>   <br>
+               .novoparagrafo{   <br>
+               color: red;   <br>
+               font-size: 50px;   <br>
+               font-weight: bold;<br>
+               }   <br>
+
+               .italico{   <br>
+               font-style: italic;   <br>
+
+               }   <br>
+
+
+
+               #pazul{   <br>
+               color: #000080 <font color=red>!important</font>;   <br>
+               }   <br>
+
+
+               <b><</b>/STYLE<b>></b>   
+
+             </p>
+             </b>
+
+
+             <br><p>No <b>STYLE</b> acima criamos as classes <b>.novoparagrafo</b> e <b>.italico</b> e uma ID <B>#pazul</B> que tem seus valores descritos dentro dos Colchetes <b>{ } </b>.  </p>
+
+             <p>Repare que a ID tem um !important antes do Ponto e Virgula. Isso significa que se caso o objeto tenha já alguma cor definida por outra Classe ou ID, o valor que tem o !important é que será aplicado no objeto. </p>
+
+             <p>Para aplicar a Classe acima em um paragrafo, fazemos assim:</p>
+
+             <b><p>  <b><</b>p class="novoparagrafo"<b>></b>Aqui escrevemos o novo paragrafo.<b><</b>/p<b>></b>  </p></b>
+
+             <p>O Efeito que teremos será esse:</p>
+
+             <p class="novoparagrafo">Aqui escrevemos o novo paragrafo.</p>
+
+             <p>Um único objeto, exemplo um Parágrafo, pode ter várias Classes e ID´s, exemplo: </p>
+
+             <b><p>  <b><</b>p class="novoparagrafo italico"<b>></b>Paragrafo com itálico.<b><</b>/p<b>></b>  </p></b>
+
+             <p>Resultado:</p>
+
+             <p class="novoparagrafo italico">Paragrafo com itálico.</p>
+
+              <p>Agora vamos aplicar a ID <b>#pazul</b> que tem um <font color=red>!important</font> e vai modificar o vermelho para azul.</p>
+
+              <b><p>  <b><</b>p id="pazul" class="novoparagrafo italico"<b>></b>Paragrafo azul com itálico.<b><</b>/p<b>></b>  </p></b>
+
+              <p>Resultado:</p>
+
+              <p  id="pazul" class="novoparagrafo italico">Paragrafo azul com itálico.</p>
+
+
+              <br><h3>Principais valores que você precisa saber!</h3>
+
+              <p>Agora que você já sabe como criar a folha de Estilo, Classes e IDs, vou listar abaixo os principais valores que você precisa saber para aplicar nas suas classes e IDs.</p>
+
+              <p><b>font-family</b>: define a fonte que você deseja utilizar.  Exemplo: <b>font-family: arial;</b></p>
+
+              <p><b>font-weight</b>: determina a grossura da fonte.  Exemplo: <b>font-weight: bold;</b></p>
+
+              <p><b>font-size</b>: determina o tamanho da fonte. Exemplo: <b>font-size: 30px;</b></p>
+
+              <p><b>color</b>: define as cores de fontes e bordas. Exemplo: <b>color: blue;</b></p>
+
+              <p><b>background-color</b>: define a cor do fundo algum objeto. Exemplo: <b>background-color: red;</b></p>
+
+              <p><b>width</b>: define a largura de algum objeto. Você poderá definir em pixels - px ou porcentagem %.  Exemplo: <b>width: 100%;</b></p>
+
+              <p><b>height</b>: Define a altura de algum objeto. Você poderá definir em pixels - px ou porcentagem %. Exemplo: <b>height: 50px;</b></p>
+
+              <p><b>text-align</b>: Define o alinhamento de texto ou imagem. Você poderá usar as opções: left, center e right. Exemplo: <b>text-align: center;</b></p>
+
+              <p><b>border</b>: Define a borda de um objeto. Exemplo: <b>border: solid 1px red;</b></p>
+
+
+              <br><h3>Margens Internas</h3>
+              <P> Para ajustar o posicionamento de objetos, podemos utilizar as Margens Internas: </P>
+
+
+              <p>padding: Define uma margem INTERNA no objeto. Exemplo: <b>padding: 20px;</b></p>
+
+              <p>padding-left: Define uma margem INTERNA no lado esquerdo do objeto. Exemplo: <b>padding-left: 20px;</b></p>
+
+              <p>padding-right: Define uma margem INTERNA no lado direito do objeto. Exemplo: <b>padding-right: 20px;</b></p>
+
+              <p>padding-top: Define uma margem INTERNA no em cima do objeto. Exemplo: <b>padding-top: 20px;</b></p>
+
+              <p>padding-bottom: Define uma margem INTERNA em baixo do objeto. Exemplo: <b>padding-bottom: 20px;</b></p>
+
+
+              <br><h3>Margens Externas</h3>
+              <P> Também podemos utilizar as Margens Externas: </P>
+
+              <p>margin: Define uma margem EXTERNA no objeto. Exemplo: <b>margin: 20px;</b></p>
+
+              <p>margin-left: Define uma margem EXTERNA no lado esquerdo do objeto. Exemplo: <b>margin-left: 20px;</b></p>
+
+              <p>margin-right: Define uma margem EXTERNA no lado direito do objeto. Exemplo: <b>margin-right: 20px;</b></p>
+
+              <p>margin-top: Define uma margem EXTERNA no em cima do objeto. Exemplo: <b>margin-top: 20px;</b></p>
+
+              <p>margin-bottom: Define uma margem EXTERNA em baixo do objeto. Exemplo: <b>margin-bottom: 20px;</b></p>
+
+
+
+              <br><h3>Posicionando objetos</h3>
+              <P> Outra forma de posicionar objetos é utilizando o <B>POSITION</B>: </P>
+
+              
+                <p>O Position define a posição de um objeto. Os seus valores mais utilizados são: </p>
+
+                <p><b>position: relative;</b> O Relative é muito utilizado para fazer um objeto flutuar no layout e poder posicionar ele mais para direita, esquerda, cima ou baixo. Com os comandos exemplo: <b>Top: 50px; Left: 100px;</b></p>
+                <p><b>position: absolute;</b> O Absolute também faz o objeto flutuar no layout, porém esse objeto não interfere mais no posicionamento dos demais objetos do layout. Importante usar os comandos de posicionamento, exemplo: <b>Top: 150px</b>; <b>right: 50px</b>;</p>
+                <p><b>position: fixed;</b> O Fixed é utilizado para fixar o objeto em algum local da tela, por mais que o usuário faça o scrool para cima e para baixo, o objeto continuará lá.</p>
+                
+
+
+				</p>
+	    	</div>
+    	</div>
+    </div>
+    <!-- fim conteúdo -->
+      
+
+
+      <!-- Inicia Rodapé -->
+      <br><br>
+      <footer class="page-footer bgtopo">
+        <div class="container">
+          <div class="row rodapesite">
+
+            <div class="col l12 m12 s12 flow-text ">
+              <ul>
+                <li>Gostou deste material?</li>
+                <li>Ficou com alguma dúvida?</li>
+                <li>Quer aprender mais?</li>
+              </ul>
+                
+                <a href="http://www.theodonde.com.br" target="_blank" ><p>Por favor acesse este Link e deixe o seu comentário.</p></a>
+            </div>
+
+          </div>
+        </div>
+        <div class="footer-copyright bgrodacreditos">
+          <div class="container">
+            <center>© 2019 - Desenvolvido por Theo Dondé</center>
+          </div>
+        </div>
+      </footer>
+      <!-- Fim Rodapé -->
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> <!-- Jquery -->
+    <script type="text/javascript" src="js/materialize.js"></script> <!-- JavaScript Materialize -->
+
+     <!-- Inicio Códigos Scripts -->
+    <script>
+
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.parallax');
+        var instances = M.Parallax.init(elems, options);
+      });
+
+      // Or with jQuery
+
+      $(document).ready(function(){
+        $('.parallax').parallax();
+      });
+        
+
+
+          document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.sidenav');
+          var instances = M.Sidenav.init(elems, options);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function(){
+          $('.sidenav').sidenav();
+
+          
+        });
+    </script>
+    <!-- Fim Códigos Scripts -->
+
+
+    </body> <!-- Fecha corpo da página -->
+  </html> <!-- Fecha Html -->

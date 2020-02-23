@@ -1,0 +1,370 @@
+  <!DOCTYPE html>
+  <html> <!-- Abre Html -->
+
+    <head> <!-- Abre cabeçalho -->
+
+      <meta charset="utf-8"/> <!-- Codificação do Arquivo -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Otimização Mobile -->
+
+      <title>Como fazer sites responsivos com Materialize CSS</title> <!-- Título da Página -->
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Google Font Icon -->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> <!-- Materialize CSS -->
+      <link type="text/css" rel="stylesheet" href="css/estilo.css"/>  <!-- O seu arquivo CSS -->
+
+    </head> <!-- Fecha cabeçalho -->   
+   
+    <body>  <!-- Inicia corpo da página -->
+
+    <!-- Inicia Topo - LOGO + MENU -->
+    <div class="navbar-fixed"> 
+      <nav class="bgtopo ">
+        <div class="nav-wrapper container">
+
+              <a href="index.html" class="brand-logo">MaterializeCSS</a> <!-- LOGOTIPO -->
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> <!-- Burguer Menu Responsivo --> 
+
+              <!-- INICIO MENU PC Desktop -->
+              <ul class="right hide-on-med-and-down"> 
+                <li><a href="Guia-rapido-de-html.html">HTML</a></li>
+                <li><a href="Guia-rapido-de-css.html">CSS</a></li>
+                <li><a href="materialize.html">Materialize</a></li>
+                <li><a href="sublime-text.html">Sublime Text</a></li>
+              </ul> 
+              <!-- FIM MENU PC Desktop -->
+        </div>
+      </nav>
+    </div>
+    <!-- FIM Topo - LOGO + MENU -->  
+
+    <!-- inicio menu-mobile -->
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="guia-rapido-de-html.html">HTML</a></li>
+      <li><a href="guia-rapido-de-css.html">CSS</a></li>
+      <li><a href="materialize.html">Materialize</a></li>
+      <li><a href="sublime-text.html">Sublime Text</a></li>
+    </ul>
+    <!-- fim menu-mobile -->
+
+
+  <!-- INICIO Imagem Parallax -->  
+  <div class="parallax-container cxaltura">
+    <div class="parallax"><img src="fotos/materialize2.png"></div>
+  </div>
+  <!-- FIM Imagem Parallax -->  
+
+<style type="text/css" media="screen">
+  textarea{font-size: 14px;}
+</style>
+
+    <!-- inicio conteúdo -->
+    <div class="container">
+    	<div class="row">
+	    	<div class="col s12 flow-text textosobremim">
+	    		<h1 class="titulo-pagina">Material Design</h1>
+
+	    		<p>Criado e projetado pelo Google, o Material Design é uma linguagem de design que combina os princípios clássicos do design bem-sucedido com a inovação e a tecnologia. O objetivo do Google é desenvolver um sistema de design que permita uma experiência de usuário unificada em todos os seus produtos em qualquer plataforma.</p>
+
+	    		<p>No site <a target="_blank" href="https://materializecss.com/" title="">materializecss.com</a> você pode baixar a biblioteca de arquivos da Materialize e tem acesso a toda biblioteca de códigos e componentes.</p>
+
+	    		<p>Vou listar abaixo os principais componentes que você precisa saber:</p>
+
+
+
+        <h2 class="tit-conteudo">Icones</h2>
+
+
+        <i class="material-icons">add</i>
+
+<br><br>
+<textarea Style="height: 50px;">
+<i class="material-icons">add</i>
+</textarea>
+
+
+
+	    		<h2 class="tit-conteudo">Botões</h2>
+
+	    		<a class="waves-effect waves-light btn">Button</a><br><br>
+				<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a><br><br>
+				<a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a><br><br>
+				<a class="waves-effect waves-light btn-large">large</a><br><br>
+
+
+<textarea Style="height: 110px;">
+<a class="waves-effect waves-light btn">Button</a>
+<a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>button</a>
+<a class="waves-effect waves-light btn"><i class="material-icons right">cloud</i>button</a>
+<a class="waves-effect waves-light btn-large">large</a>
+</textarea>
+
+
+
+
+
+
+
+				<h2 class="tit-conteudo">Collapsible</h2>
+  <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+        
+<br><br>
+<textarea Style="height: 300px;">
+  <ul class="collapsible">
+    <li>
+      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+    <li>
+      <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+    </li>
+  </ul>
+
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+        
+  </script>
+</textarea>
+
+
+				<h2 class="tit-conteudo">Material Box</h2>
+
+				<img class="materialboxed" class="responsive-img" src="fotos/sublime.jpg">
+				<br>
+
+
+<textarea Style="height: 300px;">
+<img class="materialboxed" class="responsive-img" src="fotos/sublime.jpg">
+
+
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });  
+  </script>
+</textarea>
+
+
+  <style type="text/css" media="screen">
+    .cxdiv {
+      height: 200px;
+    }
+    .azul{
+      background-color: blue;
+    }
+    .vermelha{
+      background-color: red;
+    }
+    .amarela{
+      background-color: yellow;
+    }
+  </style>
+				
+        <h2 class="tit-conteudo">Como criar Colunas</h2>
+
+        <p>Cada linha tem 12 colunas e podemos definir quantas colunas serão para os Dispositivos Móveis: Celares, Tablets e para o PC DESKTOP. </p>
+
+        <p>Abaixo vamos criar 3 DIV, que serão exibidas 3 colunas para o PC Desktop, 2 Colunas para a versão Tablet e 1 Coluna par3a a Versão Celular.</p>
+
+        <p>A classe <b>S12</b> Define a largura de 12 colunas. O <b>S</b> significa: <b>SMALL (pequeno) - Versão para Celulares e Smartphones.</b> </p>
+
+        <p>A classe <b>M6</b> Define a largura de 6 colunas. O <b>M</b> significa: <b>Medium (médio) - Versão para Tablets.</b> </p>
+
+        <p>A classe <b>L4</b> Define a largura de 4 colunas. O <b>L</b> significa: <b>Large (grande) - Versão para PCs Desktops.</b> </p>
+
+        <p>Vamos colorir elas para facilitar a visualização: </p>
+
+        <div class="col s12 m6 l4 cxdiv azul">
+
+        </div>
+        <div class="col s12 m6 l4 cxdiv vermelha">
+
+        </div>
+        <div class="col s12 m6 l4 cxdiv amarela">
+
+        </div>
+<br><br>&nbsp;
+
+<textarea Style="height: 300px;">
+  <style type="text/css" media="screen">
+    .cxdiv {
+      height: 200px;
+    }
+    .azul{
+      background-color: blue;
+    }
+    .vermelha{
+      background-color: red;
+    }
+    .amarela{
+      background-color: yellow;
+    }
+  </style>
+
+        <div class="col s12 m6 l4 cxdiv azul">
+
+        </div>
+        <div class="col s12 m6 l4 cxdiv vermelha">
+
+        </div>
+        <div class="col s12 m6 l4 cxdiv amarela">
+
+        </div>
+</textarea>
+
+				<p>Acesse o site  <a target="_blank" href="https://materializecss.com/" title="">materializecss.com</a> e confira a documentação completa.</p>
+	    	</div>
+    	</div>
+    </div>
+    <!-- fim conteúdo -->
+      
+
+
+      <!-- Inicia Rodapé -->
+      <br><br>
+      <footer class="page-footer bgtopo">
+        <div class="container">
+          <div class="row rodapesite">
+
+            <div class="col l12 m12 s12 flow-text ">
+              <ul>
+                <li>Gostou deste material?</li>
+                <li>Ficou com alguma dúvida?</li>
+                <li>Quer aprender mais?</li>
+              </ul>
+                
+                <a href="http://www.theodonde.com.br" target="_blank" ><p>Por favor acesse este Link e deixe o seu comentário.</p></a>
+            </div>
+
+          </div>
+        </div>
+        <div class="footer-copyright bgrodacreditos">
+          <div class="container">
+            <center>© 2019 - Desenvolvido por Theo Dondé</center>
+          </div>
+        </div>
+      </footer>
+      <!-- Fim Rodapé -->
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> <!-- Jquery -->
+    <script type="text/javascript" src="js/materialize.js"></script> <!-- JavaScript Materialize -->
+
+     <!-- Inicio Códigos Scripts -->
+    <script>
+        $(document).ready(function(){
+          $('.slider').slider({
+            full_width: true,
+            indicators: false,
+            transition: 2000,
+            interval:4000
+          });
+        });
+
+          document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.sidenav');
+          var instances = M.Sidenav.init(elems, options);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function(){
+          $('.sidenav').sidenav();
+
+          $(".dropdown-trigger").dropdown();
+        });
+
+
+
+
+		  document.addEventListener('DOMContentLoaded', function() {
+		    var elems = document.querySelectorAll('.carousel');
+		    var instances = M.Carousel.init(elems, options);
+		  });
+
+		  // Or with jQuery
+
+		  $(document).ready(function(){
+		    $('.carousel').carousel();
+		  });
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.collapsible');
+    var instances = M.Collapsible.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.collapsible').collapsible();
+  });
+        
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.materialboxed').materialbox();
+  });
+
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.parallax');
+    var instances = M.Parallax.init(elems, options);
+  });
+
+  // Or with jQuery
+
+  $(document).ready(function(){
+    $('.parallax').parallax();
+  });
+
+    </script>
+    <!-- Fim Códigos Scripts -->
+
+
+    </body> <!-- Fecha corpo da página -->
+  </html> <!-- Fecha Html -->

@@ -1,0 +1,131 @@
+.slider .slides li .caption, .text-slider-sub {
+  color: white;
+  text-shadow: 1px 1px 5px black;
+}
+
+.slider.fullscreen {
+  bottom: 0;
+  height: 500px;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 50px;
+  width: 100%;
+}
+
+
+
+
+footer.page-footer {
+  margin-top: 0px;
+}
+
+.nomb {
+  margin-bottom: 0px;
+}
+
+
+
+.text-justify {
+  text-align: justify;
+}
+
+
+.slider{
+  top: 0px !important;
+  position: relative !important;
+}
+
+.textosobremim{
+  text-align: justify;
+}
+
+.titulo-pagina{
+    font-size: 30px;
+  font-weight:bold;
+}
+.titulo-chamada{
+  font-size: 36px;
+  font-weight:bold;
+  text-align: center;
+}
+
+.tit-conteudo{
+    font-size: 30px;
+  font-weight:bold;
+}
+
+.titulo-servico{
+  font-size: 30px;
+  font-weight:bold;
+  text-align: center;
+  
+}
+
+.fotochamada{
+  border-radius: 10px;
+}
+
+.descricao-chamada{
+  text-align: center;
+      height: 70px;
+}
+
+.mgtop50{
+  margin-top: 50px !important;
+}
+
+.rodapesite{
+  height: 260px;
+  
+}
+
+.bgtopo{
+  background-color:#000080;
+}
+
+.bgrodacreditos{
+  background-color:#00005d !important;
+}
+
+
+.sidenav{
+      background-color: #000040;
+}
+
+.sidenav li > a{
+  color: white !important;
+}
+
+.sidenav li > a:hover{
+      background-color: #000080 !important;
+}
+
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons{
+    font-size: 34px;  
+}
+
+.btn, .btn-large{
+      background-color: #000080;
+      border-radius: 5px;
+      
+}
+
+.btn:hover, .btn-large:hover{
+      background-color: #00005d;
+      border-radius: 5px;
+      
+}
+
+.cxaltura{
+  height: 350px;
+}
+
+
+h3 {
+    
+    font-size: 30px !important;
+    font-weight: bold;
+    text-transform: uppercase;
+    
+}

@@ -1,0 +1,142 @@
+  <!DOCTYPE html>
+  <html> <!-- Abre Html -->
+
+    <head> <!-- Abre cabeçalho -->
+
+      <meta charset="utf-8"/> <!-- Codificação do Arquivo -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Otimização Mobile -->
+
+      <title>Como fazer sites responsivos com Materialize CSS</title> <!-- Título da Página -->
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Google Font Icon -->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> <!-- Materialize CSS -->
+      <link type="text/css" rel="stylesheet" href="css/estilo.css"/>  <!-- O seu arquivo CSS -->
+
+    </head> <!-- Fecha cabeçalho -->   
+   
+    <body>  <!-- Inicia corpo da página -->
+
+    <!-- Inicia Topo - LOGO + MENU -->
+    <div class="navbar-fixed"> 
+      <nav class="bgtopo ">
+        <div class="nav-wrapper container">
+
+              <a href="index.html" class="brand-logo">MaterializeCSS</a> <!-- LOGOTIPO -->
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> <!-- Burguer Menu Responsivo --> 
+
+              <!-- INICIO MENU PC Desktop -->
+              <ul class="right hide-on-med-and-down"> 
+                <li><a href="Guia-rapido-de-html.html">HTML</a></li>
+                <li><a href="Guia-rapido-de-css.html">CSS</a></li>
+                <li><a href="materialize.html">Materialize</a></li>
+                <li><a href="sublime-text.html">Sublime Text</a></li>
+              </ul> 
+              <!-- FIM MENU PC Desktop -->
+        </div>
+      </nav>
+    </div>
+    <!-- FIM Topo - LOGO + MENU -->  
+
+    <!-- inicio menu-mobile -->
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="guia-rapido-de-html.html">HTML</a></li>
+      <li><a href="guia-rapido-de-css.html">CSS</a></li>
+      <li><a href="materialize.html">Materialize</a></li>
+      <li><a href="sublime-text.html">Sublime Text</a></li>
+    </ul>
+    <!-- fim menu-mobile -->
+
+  <!-- INICIO Imagem Parallax -->  
+  <div class="parallax-container cxaltura">
+    <div class="parallax"><img src="fotos/sublime.jpg"></div>
+  </div>
+  <!-- FIM Imagem Parallax --> 
+
+    <!-- inicio conteúdo -->
+    <div class="container">
+    	<div class="row">
+	    	<div class="col s12 flow-text textosobremim">
+	    		<h1 class="titulo-pagina">Sublime Text</h1>
+
+	    		<p>Na minha opinião, é o melhor editor de HTML e CSS.</p>
+
+          <p>Baixe gratuitamente no site:  <a href="https://www.sublimetext.com/" title="Sublime Text" target="_blank">www.sublimetext.com</a> </p>
+
+          <p>Se você viu os códigos HTML, CSS e Materialize, faça uma cópia dos arquivos deste site e abra no Sublime Text.</p>
+
+          <p>Experimente alterar os textos, cores e imagens destas páginas. </p>
+
+          <p>Incluí comentários nos códigos HTML, para facilitar o seu entendimento. </p>
+
+          <p>Quando conhece os comandos HTML, CSS e Materialize, você pode criar qualquer tipo página !</p>
+
+          <p>Use essa versão do Materialize (versão 1.0.0 ) que você já baixou e começar a criar as suas páginas!</p>
+
+
+
+				</p>
+	    	</div>
+    	</div>
+    </div>
+    <!-- fim conteúdo -->
+      
+
+
+      <!-- Inicia Rodapé -->
+      <br><br>
+      <footer class="page-footer bgtopo">
+        <div class="container">
+          <div class="row rodapesite">
+
+            <div class="col l12 m12 s12 flow-text ">
+              <ul>
+                <li>Gostou deste material?</li>
+                <li>Ficou com alguma dúvida?</li>
+                <li>Quer aprender mais?</li>
+              </ul>
+                
+                <a href="http://www.theodonde.com.br" target="_blank" ><p>Por favor acesse este Link e deixe o seu comentário.</p></a>
+            </div>
+
+          </div>
+        </div>
+        <div class="footer-copyright bgrodacreditos">
+          <div class="container">
+            <center>© 2019 - Desenvolvido por Theo Dondé</center>
+          </div>
+        </div>
+      </footer>
+      <!-- Fim Rodapé -->
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> <!-- Jquery -->
+    <script type="text/javascript" src="js/materialize.js"></script> <!-- JavaScript Materialize -->
+
+     <!-- Inicio Códigos Scripts -->
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.parallax');
+        var instances = M.Parallax.init(elems, options);
+      });
+
+      // Or with jQuery
+
+      $(document).ready(function(){
+        $('.parallax').parallax();
+      });
+        
+
+
+
+        $(document).ready(function(){
+          $('.sidenav').sidenav();
+
+          
+        });
+    </script>
+    <!-- Fim Códigos Scripts -->
+
+
+    </body> <!-- Fecha corpo da página -->
+  </html> <!-- Fecha Html -->

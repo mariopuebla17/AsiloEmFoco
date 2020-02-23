@@ -1,0 +1,215 @@
+  <!DOCTYPE html>
+  <html> <!-- Abre Html -->
+
+    <head> <!-- Abre cabeçalho -->
+
+      <meta charset="utf-8"/> <!-- Codificação do Arquivo -->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/> <!-- Otimização Mobile -->
+
+      <title>Guia Rapido de HTML</title> <!-- Título da Página -->
+
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> <!-- Google Font Icon -->
+      <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"/> <!-- Materialize CSS -->
+      <link type="text/css" rel="stylesheet" href="css/estilo.css"/>  <!-- O seu arquivo CSS -->
+
+    </head> <!-- Fecha cabeçalho -->   
+   
+    <body>  <!-- Inicia corpo da página -->
+
+    <!-- Inicia Topo - LOGO + MENU -->
+    <div class="navbar-fixed"> 
+      <nav class="bgtopo ">
+        <div class="nav-wrapper container">
+
+              <a href="index.html" class="brand-logo">MaterializeCSS</a> <!-- LOGOTIPO -->
+              <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a> <!-- Burguer Menu Responsivo --> 
+
+              <!-- INICIO MENU PC Desktop -->
+              <ul class="right hide-on-med-and-down"> 
+                <li><a href="Guia-rapido-de-html.html">HTML</a></li>
+                <li><a href="Guia-rapido-de-css.html">CSS</a></li>
+                <li><a href="materialize.html">Materialize</a></li>
+                <li><a href="sublime-text.html">Sublime Text</a></li>
+              </ul> 
+              <!-- FIM MENU PC Desktop -->
+        </div>
+      </nav>
+    </div>
+    <!-- FIM Topo - LOGO + MENU -->  
+
+    <!-- inicio menu-mobile -->
+    <ul class="sidenav" id="mobile-demo">
+      <li><a href="guia-rapido-de-html.html">HTML</a></li>
+      <li><a href="guia-rapido-de-css.html">CSS</a></li>
+      <li><a href="materialize.html">Materialize</a></li>
+      <li><a href="sublime-text.html">Sublime Text</a></li>
+    </ul>
+    <!-- fim menu-mobile -->
+
+  <!-- INICIO Imagem Parallax -->  
+  <div class="parallax-container cxaltura">
+    <div class="parallax"><img src="fotos/html.jpg"></div>
+  </div>
+  <!-- FIM Imagem Parallax -->  
+
+
+
+    <!-- inicio conteúdo -->
+    <div class="container">
+    	<div class="row">
+	    	<div class="col s12 flow-text textosobremim">
+	    		<h1 class="titulo-pagina">Guia rápido de HTML</h1>
+
+	    		<p>Vou descrever abaixo os principais comandos HTML que você precisa saber para começar a criar página em HTML.</p>
+
+	    		<p>Todo código HTML tem uma abertura e fechamento de TAG: <b><></b></p>
+
+	    		<p>O código deve ser aberto e fechado, exemplo:
+
+	    		<p>Abre: <b><</b>CODIGO<b>></b> </p>
+
+	    		<p>E Fecha: <b><</b>/CODIGO<b>></b></p>
+
+	    		<p>Se você abrir um arquivo .HTML você verá os seguintes códigos:</p><br>
+
+          <h3>Principais comandos que você precisa saber:</h3>
+
+	    		<p><b><</b>HTML</b>></b> Comando para Iniciar uma página HTML (Abre no inicio do arquivo, e fecha no final do arquivo). <b><</b>/HTML</b>></b></p>
+	    		
+	    		<p><b><</b>HEAD</b>></b> O Head é o Cabeçalho da página, dentro dele é Incluído o Título da Página, Codificação do Arquivo, Carrega as Fontes e CSS. <b><</b>/HEAD</b>></b></p>
+
+	    		<p><b><</b>TITLE</b>></b> É o Título da página. Esse Título é exibido no Google quando a página é pesquisada. As palavras que tem no Title são palavras chaves que indexam o site na pesquisa do Google. <b><</b>/TITLE</b>></b></p>
+
+	    		<p><b><</b>BODY</b>></b> Comando para abrir o Corpo da Página. Dentro do Body fica o Topo, conteúdo e rodapé.  <b><</b>/BODY</b>></b></p>
+
+				<p><b><</b>DIV</b>></b> São caixas onde podemos empilhar conteúdos de Texto, Imagem, Lista, etc... Elas devem ser manipuladas incluindo classes de CSS.  <b><</b>/DIV</b>></b>	</p>    <br>
+
+
+        <h3>Títulos</h3>
+				<p>São 6 tamanhos de títulos e eles podem ser utilizados com hierarquia, conforme o seu conteudo:</p>
+				
+				<p><b><</b>H1</b>></b> Tamanho maior de Título <b><</b>/H1</b>></b></p>	    
+				<p><b><</b>H2</b>></b> Tamanho de Título 2<b><</b>H2</b>></b></p>	    
+				<p><b><</b>H3</b>></b> Tamanho de Título 3<b><</b>H3</b>></b></p>	    
+				<p><b><</b>H4</b>></b> Tamanho de Título 4<b><</b>H4</b>></b></p>	    
+				<p><b><</b>H5</b>></b> Tamanho de Título 5<b><</b>H5</b>></b></p>	    
+				<p><b><</b>H6</b>></b> Tamanho de Título 6<b><</b>H6</b>></b></p>	    
+
+				<br>
+
+        <h3>Edição de textos</h3>
+
+				<p><b><</b>P</b>></b> Utilizado para fazer um paragrafo. <b><</b>/P</b>></b></p>
+
+				<p><b><</b>B</b>></b> Utilizado para fazer <b>negríto</b>. <b><</b>/B</b>></b></p>
+
+				<p><b><</b>S</b>></b> Utilizado para fazer <s>riscado</s>. <b><</b>/S</b>></b></p>
+
+				<p><b><</b>I</b>></b> Utilizado para fazer <i>itálico</i>. <b><</b>/I</b>></b></p>
+
+				<p><b><</b>BR</b>></b> Utilizado para quebrar a linha.</p><br>
+
+				
+
+        <h3>Comando para incluir uma imagem:</h3>
+
+				<p> <b><</b>img src="foto.jpg"<b>></b>	   </p>
+
+<br>
+
+				<h3>Comando para incluir um link:</h3>
+
+				<p> <b><</b>a href="index.html"<b>></b> Texto que recebe o link <b><</b>/a <b>></b>	   </p><BR>
+
+
+				<h3>Comando para centralizar um texto ou imagem:</h3>
+
+				<p> <b><</b>center<b>></b>	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  <b><</b>/center<b>></b>  </p><BR>
+
+
+				<h3>Comando para dar vários espaços:</h3>
+
+				<p> <b>&</b><b>nbsp</b><b>;</b>  - Cada <b>&</b><b>nbsp</b><b>;</b> equivale a uma espaço.  </p><BR>
+
+				<h3>Comando para criar uma lista:</h3>
+
+				<p> <b><</b>UL<b>></b>	   </p>
+				<p> <b><</b>LI<b>></b>Item 1 da Lista<b><</b>/LI<b>></b>	   </p>
+				<p> <b><</b>LI<b>></b>Item 2 da Lista<b><</b>/LI<b>></b>	   </p>
+				<p> <b><</b>LI<b>></b>Item 3 da Lista<b><</b>/LI<b>></b>	   </p>
+				<p> <b><</b>LI<b>></b>Item 4 da Lista<b><</b>/LI<b>></b>	   </p>
+				<p> <b><</b>/UL<b>></b>	   </p>
+
+				</p>
+	    	</div>
+    	</div>
+    </div>
+    <!-- fim conteúdo -->
+      
+
+
+      <!-- Inicia Rodapé -->
+      <br><br>
+      <footer class="page-footer bgtopo">
+        <div class="container">
+          <div class="row rodapesite">
+
+            <div class="col l12 m12 s12 flow-text ">
+              <ul>
+                <li>Gostou deste material?</li>
+                <li>Ficou com alguma dúvida?</li>
+                <li>Quer aprender mais?</li>
+              </ul>
+                
+                <a href="http://www.theodonde.com.br" target="_blank" ><p>Por favor acesse este Link e deixe o seu comentário.</p></a>
+            </div>
+
+          </div>
+        </div>
+        <div class="footer-copyright bgrodacreditos">
+          <div class="container">
+            <center>© 2019 - Desenvolvido por Theo Dondé</center>
+          </div>
+        </div>
+      </footer>
+      <!-- Fim Rodapé -->
+
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script> <!-- Jquery -->
+    <script type="text/javascript" src="js/materialize.js"></script> <!-- JavaScript Materialize -->
+
+     <!-- Inicio Códigos Scripts -->
+    <script>
+
+      document.addEventListener('DOMContentLoaded', function() {
+        var elems = document.querySelectorAll('.parallax');
+        var instances = M.Parallax.init(elems, options);
+      });
+
+      // Or with jQuery
+
+      $(document).ready(function(){
+        $('.parallax').parallax();
+      });
+          
+
+
+
+          document.addEventListener('DOMContentLoaded', function() {
+          var elems = document.querySelectorAll('.sidenav');
+          var instances = M.Sidenav.init(elems, options);
+        });
+
+        // Or with jQuery
+
+        $(document).ready(function(){
+          $('.sidenav').sidenav();
+
+          
+        });
+    </script>
+    <!-- Fim Códigos Scripts -->
+
+
+    </body> <!-- Fecha corpo da página -->
+  </html> <!-- Fecha Html -->
