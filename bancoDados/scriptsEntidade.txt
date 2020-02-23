@@ -67,7 +67,7 @@ CREATE TABLE IF NOT EXISTS `asilo` (
     `cnpj`varchar(14) NOT NULL,
     `enderecoId` int(9)  NOT NULL,
     PRIMARY KEY (`id`),
-    FOREIGN KEY (`responsavelId`) REFERENCES (`responsavel`),
+    FOREIGN KEY (`responsavelId`) REFERENCES (`responsavel`)
 );
 
 CREATE TABLE IF NOT EXISTS `avaliacao` (
@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS `avaliacao` (
     `comentario` varchar(200),
     `nota` int(1) NOT NULL,
     PRIMARY KEY (`id`),
-    FOREIGN KEY (`asiloId`) REFERENCES (`asilo`),
+    FOREIGN KEY (`asiloId`) REFERENCES (`asilo`)
 );
 
 CREATE TABLE IF NOT EXISTS `agenda` (
@@ -83,7 +83,7 @@ CREATE TABLE IF NOT EXISTS `agenda` (
     `data` date NOT NULL,
     `hora` time NOT NULL,
     PRIMARY KEY (`id`),
-    FOREIGN KEY (`prontuarioId`) REFERENCES (`prontuario`),
+    FOREIGN KEY (`prontuarioId`) REFERENCES (`prontuario`)
 );
 
 CREATE TABLE IF NOT EXISTS `responsavel`(
@@ -97,14 +97,14 @@ CREATE TABLE IF NOT EXISTS `responsavel`(
     FOREIGN KEY (`idosoId`) REFERENCES (`idoso`),
     FOREIGN KEY (`enderecoId`) REFERENCES (`endereco`),
     FOREIGN KEY (`asiloId`) REFERENCES (`asilo`)
-):
+);
 
 CREATE TABLE IF NOT EXISTS `estado`(
     `id` INT (9) AUTO_INCREMENT NOT NULL,
     `sigla` VARCHAR (2) NOT NULL,
     `nome` VARCHAR (18) NOT NULL,
-   PRIMARY KEY (`id`) 
-):
+    PRIMARY KEY (`id`) 
+);
 
 CREATE TABLE IF NOT EXISTS `endereco`(
     `id` INT (9) AUTO_INCREMENT NOT NULL,
@@ -116,4 +116,4 @@ CREATE TABLE IF NOT EXISTS `endereco`(
     `complemento` VARCHAR (50),
     PRIMARY KEY (`id`),
     FOREIGN KEY (`estadoId`) REFERENCES (`estado`)
-):
+);
