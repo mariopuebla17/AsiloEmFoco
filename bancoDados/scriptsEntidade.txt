@@ -88,10 +88,10 @@ CREATE TABLE IF NOT EXISTS `agenda` (
 
 CREATE TABLE IF NOT EXISTS `responsavel`(
     `id` INT (9) AUTO_INCREMENT NOT NULL,
-    `nome` VARCHAR (45),
-    `cpf` VARCHAR (11),
-    `email` VARCHAR (45),
-    `dataNasc` DATETIME.
+    `nome` VARCHAR (45) NOT NULL,
+    `cpf` VARCHAR (11) NOT NULL,
+    `email` VARCHAR (45) NOT NULL,
+    `dataNasc` DATETIME NOT NULL.
     PRIMARY KEY (`id`),
     FOREING KEY (`contatoId`) REFERENCES (`contato`),
     FOREING KEY (`idosoId`) REFERENCES (`idoso`),
@@ -101,18 +101,19 @@ CREATE TABLE IF NOT EXISTS `responsavel`(
 
 CREATE TABLE IF NOT EXISTS `estado`(
     `id` INT (9) AUTO_INCREMENT NOT NULL,
-    `sigla` VARCHAR (2),
-    `nome` VARCHAR (18),
+    `sigla` VARCHAR (2) NOT NULL,
+    `nome` VARCHAR (18) NOT NULL,
    PRIMARY KEY (`id`) 
 ):
 
 CREATE TABLE IF NOT EXISTS `endereco`(
     `id` INT (9) AUTO_INCREMENT NOT NULL,
-    `cidade` VARCHAR (28),
-    `logradouro` VARCHAR (50),
-    `numero` INT (5),
-    `cep` INT (9).
-    `bairro` VARCHAR (50),
+    `cidade` VARCHAR (28) NOT NULL,
+    `logradouro` VARCHAR (50) NOT NULL,
+    `numero` INT (5) NOT NULL,
+    `cep` INT (9) NOT NULL,
+    `bairro` VARCHAR (50) NOT NULL,
+    `complemento` VARCHAR (50),
     PRIMARY KEY (`id`),
     FOREING KEY (`estadoId`) REFERENCES (`estado`)
 ):
