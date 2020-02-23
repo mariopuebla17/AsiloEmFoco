@@ -84,3 +84,34 @@ CREATE TABLE IF NOT EXISTS `agenda` (
     PRIMARY KEY (`id`),
     FOREIGN KEY (`prontuarioId`) REFERENCES (`prontuario`),
 );
+
+CREATE TABLE IF NOT EXISTS `responsavel`(
+    `id` INT (9) AUTO_INCREMENT NOT NULL,
+    `nome` VARCHAR (45),
+    `cpf` VARCHAR (11),
+    `email` VARCHAR (45),
+    `dataNasc` DATETIME.
+    PRIMARY KEY (`id`),
+    FOREING KEY (`contatoId`) REFERENCES (`contato`),
+    FOREING KEY (`idosoId`) REFERENCES (`idoso`),
+    FOREING KEY (`enderecoId`) REFERENCES (`endereco`),
+    FOREING KEY (`asiloId`) REFERENCES (`asilo`)
+):
+
+CREATE TABLE IF NOT EXISTS `estado`(
+    `id` INT (9) AUTO_INCREMENT NOT NULL,
+    `sigla` VARCHAR (2),
+    `nome` VARCHAR (18),
+   PRIMARY KEY (`id`) 
+):
+
+CREATE TABLE IF NOT EXISTS `endereco`(
+    `id` INT (9) AUTO_INCREMENT NOT NULL,
+    `cidade` VARCHAR (28),
+    `logradouro` VARCHAR (50),
+    `numero` INT (5),
+    `cep` INT (9).
+    `bairro` VARCHAR (50),
+    PRIMARY KEY (`id`),
+    FOREING KEY (`estadoId`) REFERENCES (`estado`)
+):
