@@ -1,20 +1,4 @@
-- Luan
-    . Responsavel
-    . Estados
-    . Endereco
-- Juan
-    . Asilo
-    . Avaliacoes
-    . Agenda
-- Mario
-    . Funcionario
-    . Contato
-    . FormacaoFuncionario
-- Steicy
-    . Idoso
-    . Prontuario
-
-------------------------------------------------------
+CREATE DATABASE AsiloEmFoco;
 
 CREATE TABLE IF NOT EXISTS `contato` (
     `id` int(9) AUTO_INCREMENT NOT NULL,
@@ -58,6 +42,7 @@ CREATE TABLE IF NOT EXISTS `asilo` (
     `cnpj`varchar(14) NOT NULL,
     `enderecoId` int(8)  NOT NULL,
     `responsavelId` int(8)  NOT NULL,
+    `loginId` int(8)  NOT NULL,
     PRIMARY KEY (`id`)
 );
 
@@ -71,6 +56,7 @@ CREATE TABLE IF NOT EXISTS `responsavel`(
     `idosoId` INT (8) NOT NULL,
     `enderecoId` INT (8) NOT NULL,
     `asiloId` INT (8) NOT NULL,
+    `loginId` int(8)  NOT NULL,
     PRIMARY KEY (`id`)
 );
 
@@ -84,6 +70,7 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
     `asiloId` int(8)  NOT NULL,
     `enderecoId` int(8)  NOT NULL,
     `formacaoId` int(8)  NOT NULL,
+    `loginId` int(8)  NOT NULL,
     PRIMARY KEY (`id`)
 );
 
@@ -123,6 +110,7 @@ CREATE TABLE IF NOT EXISTS `login` (
     `username` varchar(20) NOT NULL,
     `password` varchar(30) NOT NULL,
     `confirmPassword` varchar(30) NOT NULL,
+    `perfil` int(1) NOT NULL,
     PRIMARY KEY (`id`)
 );
 
@@ -132,7 +120,8 @@ ADD FOREIGN KEY (`prontuarioId`) REFERENCES prontuario(id) ON DELETE CASCADE;
 ALTER TABLE asilo
 ADD FOREIGN KEY (`contatoId`) REFERENCES contato(id) ON DELETE CASCADE,
 ADD FOREIGN KEY (`enderecoId`) REFERENCES endereco(id) ON DELETE CASCADE,
-ADD FOREIGN KEY (`responsavelId`) REFERENCES responsavel(id) ON DELETE CASCADE;
+ADD FOREIGN KEY (`responsavelId`) REFERENCES responsavel(id) ON DELETE CASCADE,
+ADD FOREIGN KEY (`loginId`) REFERENCES login(id) ON DELETE CASCADE;
 
 ALTER TABLE avaliacao
 ADD FOREIGN KEY (`asiloId`) REFERENCES asilo(id) ON DELETE CASCADE;
@@ -144,7 +133,8 @@ ALTER TABLE funcionario
 ADD FOREIGN KEY (`asiloId`) REFERENCES asilo(id) ON DELETE CASCADE,
 ADD FOREIGN KEY (`contatoId`) REFERENCES contato(id) ON DELETE CASCADE,
 ADD FOREIGN KEY (`enderecoId`) REFERENCES endereco(id) ON DELETE CASCADE,
-ADD FOREIGN KEY (`formacaoId`) REFERENCES formacaoFuncionario(id) ON DELETE CASCADE;
+ADD FOREIGN KEY (`formacaoId`) REFERENCES formacaoFuncionario(id) ON DELETE CASCADE,
+ADD FOREIGN KEY (`loginId`) REFERENCES login(id) ON DELETE CASCADE;
 
 ALTER TABLE idoso
 ADD FOREIGN KEY (`responsavelId`) REFERENCES responsavel(id) ON DELETE CASCADE;
@@ -157,4 +147,5 @@ ALTER TABLE responsavel
 ADD FOREIGN KEY (`contatoId`) REFERENCES contato(id) ON DELETE CASCADE,
 ADD FOREIGN KEY (`idosoId`) REFERENCES idoso(id) ON DELETE CASCADE,
 ADD FOREIGN KEY (`enderecoId`) REFERENCES endereco(id) ON DELETE CASCADE,
-ADD FOREIGN KEY (`asiloId`) REFERENCES asilo(id) ON DELETE CASCADE;
+ADD FOREIGN KEY (`asiloId`) REFERENCES asilo(id) ON DELETE CASCADE,
+ADD FOREIGN KEY (`loginId`) REFERENCES login(id) ON DELETE CASCADE;

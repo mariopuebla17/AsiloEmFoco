@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Máquina: localhost
--- Data de Criação: 19-Abr-2020 às 20:59
+-- Data de Criação: 20-Abr-2020 às 00:25
 -- Versão do servidor: 5.6.13
 -- versão do PHP: 5.4.17
 
@@ -50,10 +50,12 @@ CREATE TABLE IF NOT EXISTS `asilo` (
   `cnpj` varchar(14) NOT NULL,
   `enderecoId` int(8) NOT NULL,
   `responsavelId` int(8) NOT NULL,
+  `loginId` int(8) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `contatoId` (`contatoId`),
   KEY `enderecoId` (`enderecoId`),
-  KEY `responsavelId` (`responsavelId`)
+  KEY `responsavelId` (`responsavelId`),
+  KEY `loginId` (`loginId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -145,11 +147,13 @@ CREATE TABLE IF NOT EXISTS `funcionario` (
   `asiloId` int(8) NOT NULL,
   `enderecoId` int(8) NOT NULL,
   `formacaoId` int(8) NOT NULL,
+  `loginId` int(8) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `asiloId` (`asiloId`),
   KEY `contatoId` (`contatoId`),
   KEY `enderecoId` (`enderecoId`),
-  KEY `formacaoId` (`formacaoId`)
+  KEY `formacaoId` (`formacaoId`),
+  KEY `loginId` (`loginId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -179,6 +183,7 @@ CREATE TABLE IF NOT EXISTS `login` (
   `username` varchar(20) NOT NULL,
   `password` varchar(30) NOT NULL,
   `confirmPassword` varchar(30) NOT NULL,
+  `perfil` int(1) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -214,11 +219,13 @@ CREATE TABLE IF NOT EXISTS `responsavel` (
   `idosoId` int(8) NOT NULL,
   `enderecoId` int(8) NOT NULL,
   `asiloId` int(8) NOT NULL,
+  `loginId` int(8) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `contatoId` (`contatoId`),
   KEY `idosoId` (`idosoId`),
   KEY `enderecoId` (`enderecoId`),
-  KEY `asiloId` (`asiloId`)
+  KEY `asiloId` (`asiloId`),
+  KEY `loginId` (`loginId`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 --
@@ -229,78 +236,49 @@ CREATE TABLE IF NOT EXISTS `responsavel` (
 -- Limitadores para a tabela `agenda`
 --
 ALTER TABLE `agenda`
-  ADD CONSTRAINT `agenda_ibfk_5` FOREIGN KEY (`prontuarioId`) REFERENCES `prontuario` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `agenda_ibfk_1` FOREIGN KEY (`prontuarioId`) REFERENCES `prontuario` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `agenda_ibfk_2` FOREIGN KEY (`prontuarioId`) REFERENCES `prontuario` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `agenda_ibfk_3` FOREIGN KEY (`prontuarioId`) REFERENCES `prontuario` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `agenda_ibfk_4` FOREIGN KEY (`prontuarioId`) REFERENCES `prontuario` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `agenda_ibfk_1` FOREIGN KEY (`prontuarioId`) REFERENCES `prontuario` (`id`) ON DELETE CASCADE;
 
 --
 -- Limitadores para a tabela `asilo`
 --
 ALTER TABLE `asilo`
-  ADD CONSTRAINT `asilo_ibfk_13` FOREIGN KEY (`contatoId`) REFERENCES `contato` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `asilo_ibfk_14` FOREIGN KEY (`enderecoId`) REFERENCES `endereco` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `asilo_ibfk_15` FOREIGN KEY (`responsavelId`) REFERENCES `responsavel` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `asilo_ibfk_1` FOREIGN KEY (`contatoId`) REFERENCES `contato` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `asilo_ibfk_10` FOREIGN KEY (`contatoId`) REFERENCES `contato` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `asilo_ibfk_11` FOREIGN KEY (`enderecoId`) REFERENCES `endereco` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `asilo_ibfk_12` FOREIGN KEY (`responsavelId`) REFERENCES `responsavel` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `asilo_ibfk_2` FOREIGN KEY (`enderecoId`) REFERENCES `endereco` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `asilo_ibfk_3` FOREIGN KEY (`responsavelId`) REFERENCES `responsavel` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `asilo_ibfk_4` FOREIGN KEY (`contatoId`) REFERENCES `contato` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `asilo_ibfk_5` FOREIGN KEY (`enderecoId`) REFERENCES `endereco` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `asilo_ibfk_6` FOREIGN KEY (`responsavelId`) REFERENCES `responsavel` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `asilo_ibfk_7` FOREIGN KEY (`contatoId`) REFERENCES `contato` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `asilo_ibfk_8` FOREIGN KEY (`enderecoId`) REFERENCES `endereco` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `asilo_ibfk_9` FOREIGN KEY (`responsavelId`) REFERENCES `responsavel` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `asilo_ibfk_4` FOREIGN KEY (`loginId`) REFERENCES `login` (`id`) ON DELETE CASCADE;
 
 --
 -- Limitadores para a tabela `avaliacao`
 --
 ALTER TABLE `avaliacao`
-  ADD CONSTRAINT `avaliacao_ibfk_5` FOREIGN KEY (`asiloId`) REFERENCES `asilo` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `avaliacao_ibfk_1` FOREIGN KEY (`asiloId`) REFERENCES `asilo` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `avaliacao_ibfk_2` FOREIGN KEY (`asiloId`) REFERENCES `asilo` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `avaliacao_ibfk_3` FOREIGN KEY (`asiloId`) REFERENCES `asilo` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `avaliacao_ibfk_4` FOREIGN KEY (`asiloId`) REFERENCES `asilo` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `avaliacao_ibfk_1` FOREIGN KEY (`asiloId`) REFERENCES `asilo` (`id`) ON DELETE CASCADE;
 
 --
 -- Limitadores para a tabela `endereco`
 --
 ALTER TABLE `endereco`
-  ADD CONSTRAINT `endereco_ibfk_5` FOREIGN KEY (`estadoId`) REFERENCES `estado` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `endereco_ibfk_1` FOREIGN KEY (`estadoId`) REFERENCES `estado` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `endereco_ibfk_2` FOREIGN KEY (`estadoId`) REFERENCES `estado` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `endereco_ibfk_3` FOREIGN KEY (`estadoId`) REFERENCES `estado` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `endereco_ibfk_4` FOREIGN KEY (`estadoId`) REFERENCES `estado` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `endereco_ibfk_1` FOREIGN KEY (`estadoId`) REFERENCES `estado` (`id`) ON DELETE CASCADE;
 
 --
 -- Limitadores para a tabela `funcionario`
 --
 ALTER TABLE `funcionario`
-  ADD CONSTRAINT `funcionario_ibfk_5` FOREIGN KEY (`asiloId`) REFERENCES `asilo` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `funcionario_ibfk_6` FOREIGN KEY (`contatoId`) REFERENCES `contato` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `funcionario_ibfk_7` FOREIGN KEY (`enderecoId`) REFERENCES `endereco` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `funcionario_ibfk_8` FOREIGN KEY (`formacaoId`) REFERENCES `formacaofuncionario` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `funcionario_ibfk_1` FOREIGN KEY (`asiloId`) REFERENCES `asilo` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `funcionario_ibfk_2` FOREIGN KEY (`contatoId`) REFERENCES `contato` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `funcionario_ibfk_3` FOREIGN KEY (`enderecoId`) REFERENCES `endereco` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `funcionario_ibfk_4` FOREIGN KEY (`formacaoId`) REFERENCES `formacaofuncionario` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `funcionario_ibfk_4` FOREIGN KEY (`formacaoId`) REFERENCES `formacaofuncionario` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `funcionario_ibfk_5` FOREIGN KEY (`loginId`) REFERENCES `login` (`id`) ON DELETE CASCADE;
 
 --
 -- Limitadores para a tabela `idoso`
 --
 ALTER TABLE `idoso`
-  ADD CONSTRAINT `idoso_ibfk_2` FOREIGN KEY (`responsavelId`) REFERENCES `responsavel` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `idoso_ibfk_1` FOREIGN KEY (`responsavelId`) REFERENCES `responsavel` (`id`) ON DELETE CASCADE;
 
 --
 -- Limitadores para a tabela `prontuario`
 --
 ALTER TABLE `prontuario`
-  ADD CONSTRAINT `prontuario_ibfk_3` FOREIGN KEY (`agendaId`) REFERENCES `agenda` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `prontuario_ibfk_4` FOREIGN KEY (`idosoId`) REFERENCES `idoso` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `prontuario_ibfk_1` FOREIGN KEY (`agendaId`) REFERENCES `agenda` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `prontuario_ibfk_2` FOREIGN KEY (`idosoId`) REFERENCES `idoso` (`id`) ON DELETE CASCADE;
 
@@ -311,7 +289,8 @@ ALTER TABLE `responsavel`
   ADD CONSTRAINT `responsavel_ibfk_1` FOREIGN KEY (`contatoId`) REFERENCES `contato` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `responsavel_ibfk_2` FOREIGN KEY (`idosoId`) REFERENCES `idoso` (`id`) ON DELETE CASCADE,
   ADD CONSTRAINT `responsavel_ibfk_3` FOREIGN KEY (`enderecoId`) REFERENCES `endereco` (`id`) ON DELETE CASCADE,
-  ADD CONSTRAINT `responsavel_ibfk_4` FOREIGN KEY (`asiloId`) REFERENCES `asilo` (`id`) ON DELETE CASCADE;
+  ADD CONSTRAINT `responsavel_ibfk_4` FOREIGN KEY (`asiloId`) REFERENCES `asilo` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `responsavel_ibfk_5` FOREIGN KEY (`loginId`) REFERENCES `login` (`id`) ON DELETE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
